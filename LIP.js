@@ -1,5 +1,3 @@
-const { difference } = require("lodash");
-
 const LIP = (array) => {
   const lip = Array(array.length).fill(1);
 
