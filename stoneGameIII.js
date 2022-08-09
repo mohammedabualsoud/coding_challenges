@@ -31,8 +31,15 @@ const helper = (stones, i, dp) => {
  */
 var stoneGameIII = function (stoneValue) {
   const dp = {};
-  const answer = helper(stoneValue, 0, dp);
-  if (answer > 0) return "Alice";
-  else if (answer === 0) return "Tie";
+  const alice = helper(stoneValue, 0, dp);
+  if (alice > 0) return "Alice";
+  else if (alice === 0) return "Tie";
   return "Bob";
 };
+
+const test = () => {
+  console.log(stoneGameIII([1, 2, 3, 7]) === "Bob");
+  console.log(stoneGameIII([1, 2, 3, -9]) === "Alice");
+};
+
+test();
