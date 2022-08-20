@@ -11,25 +11,19 @@ function solution(message) {
     }
   }
 
-  // Note: calculate vowels correct position after shift
-  const vowelsMap = new Map();
   for (let idx = 0; idx < vowelsList.length; idx++) {
     const vowelPos = vowelsList[idx];
+
     if (idx + 1 < vowelsList.length) {
-      vowelsMap.set(message[vowelPos], vowelsList[idx + 1]);
+      const nextVowelIdx = vowelsList[idx + 1];
+
+      shiftedChars[nextVowelIdx] = message[vowelPos];
     } else {
-      vowelsMap.set(message[vowelPos], vowelsList[0]);
-    }
-  }
-  // Note: do the  shift
-  for (let i = 0; i < message.length; i++) {
-    if (VOWELS.includes(message[i])) {
-      const nextVowelIdx = vowelsMap.get(message[i]);
-      shiftedChars[nextVowelIdx] = message[i];
+      shiftedChars[vowelsList[0]] = message[vowelPos];
     }
   }
 
   return shiftedChars.join("");
 }
 
-console.log(solution("codesignal"));
+console.log(solution("codesignal") === "cadosegnil");
