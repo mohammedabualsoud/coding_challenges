@@ -6,8 +6,8 @@ var containsDuplicate = function (nums) {
   const numDict = {};
 
   for (num of nums) {
-    numDict[num] = (numDict[num] || 0) + 1;
-    if (numDict[num] > 1) return true;
+    if (numDict[num]) return true;
+    numDict[num] = true;
   }
   return false;
 };
