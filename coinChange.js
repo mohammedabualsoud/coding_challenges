@@ -38,3 +38,4 @@ var coinChange = function (coins, amount) {
 console.log(coinChange([5, 3, 4, 1], 7) === 2);
 console.log(coinChange([5, 2, 1], 11) === 3);
 console.log(coinChange([5, 2, 3, 6], 11) === 2);
+console.log(coinChange([1, 2, 5], 100));
