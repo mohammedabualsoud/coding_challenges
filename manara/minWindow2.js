@@ -24,6 +24,7 @@ var minWindow = function (s, t) {
 
     if (tCount.has(char)) {
       windowCount.set(char, (windowCount.get(char) || 0) + 1);
+
       if (windowCount.get(char) === tCount.get(char)) {
         windowChars++;
       }
@@ -36,6 +37,7 @@ var minWindow = function (s, t) {
 
       if (windowCount.has(s[left])) {
         windowCount.set(s[left], windowCount.get(s[left]) - 1);
+
         if (windowCount.get(s[left]) < tCount.get(s[left])) {
           windowChars--;
         }
