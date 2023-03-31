@@ -16,10 +16,30 @@ const _plusOne = (nums, answer, lastDigitIndex) => {
   }
 };
 
-const plusOne = (nums) => {
+const plusOneRecursive = (nums) => {
   const answer = [...nums];
 
   _plusOne(nums, answer, nums.length - 1);
+
+  return answer;
+};
+
+const plusOne = (nums) => {
+  const answer = [...nums];
+
+  for (var i = nums.length - 1; i >= 0; i--) {
+    if (nums[i] > 0 && nums[i] < 9) {
+      answer[i]++;
+      return answer;
+    } else {
+      answer[i] = 0;
+    }
+  }
+
+  if (i === -1) {
+    answer[0] = 1;
+    answer.push(0);
+  }
 
   return answer;
 };
