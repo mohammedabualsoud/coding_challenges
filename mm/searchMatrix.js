@@ -17,7 +17,7 @@ var search = function (nums, target) {
 };
 
 /**
- * Log(n*m)
+ *  Log(m) + Log(n)
  * @param {number[][]} matrix
  * @param {number} target
  * @return {boolean}
@@ -60,7 +60,7 @@ const _searchMatrixRecursive = (matrix, top, bottom, target) => {
     return _searchMatrixRecursive(matrix, top, bottom - 1, target);
   }
 };
-// Log(n*m)
+// Log(m) + Log(n)
 var searchMatrixRecursive = function (matrix, target) {
   return _searchMatrixRecursive(matrix, 0, matrix.length - 1, target);
 };
