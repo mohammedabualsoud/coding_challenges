@@ -3,8 +3,7 @@ const endIdx = 1;
 
 const isOverLapping = (point1, point2) => {
   return (
-    (point1[endIdx] >= point2[startIdx] && point1[endIdx] <= point2[endIdx]) ||
-    (point2[endIdx] >= point1[startIdx] && point2[endIdx] <= point1[endIdx])
+    point1[endIdx] >= point2[startIdx] && point1[startIdx] <= point2[endIdx]
   );
 };
 
